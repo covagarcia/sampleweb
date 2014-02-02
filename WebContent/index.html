@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hema</title>
+
+<script type="text/javascript">
+
+var precioProductos = 0;
+var gastosGestion = 2;
+
+function agregarProducto(element) {
+	// Como element.parentNode.childNodes[5].innerHTML tiene un texto
+	// usamos la funcion parseInt para convertilo a numero y poder sumarlo
+	precioProductos = precioProductos + parseInt(element.parentNode.childNodes[5].innerHTML);
+	var precioCarro = precioProductos + gastosGestion;
+
+	document.getElementById('precioGlobalCell').innerHTML = precioCarro;
+	document.getElementById('precioProductosCell').innerHTML = precioProductos;
+
+//	document.getElementById('lastProduct').childNodes[1].innerHTML = element.parentNode.childNodes[1].innerHTML;
+//	document.getElementById('lastProduct').childNodes[3].innerHTML = element.parentNode.childNodes[5].innerHTML;
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Hema - Compras online</h2>
+
+<table border="1">
+
+<tr>
+  <td>Precio Productos</td>
+  <td id="precioProductosCell"></td>
+</tr>
+<tr>
+  <td>Carrito de compra</td>
+  <td id="precioGlobalCell"></td>
+</tr>
+</table>
+
+<br/><br/><br/>
+
+<table border="1">
+<tr>
+  <td>Producto</td>
+  <td>Foto</td>
+  <td>Precio</td>
+  <td>+</td>
+</tr>
+<tr>
+  <td>Tenedores</td>
+  <td>Foto</td>
+  <td>1</td>
+  <td onclick="agregarProducto(this);" onmouseover="this.style.cursor='pointer'">Agregar Tenedores</td>
+</tr>
+<tr>
+  <td>Servilletas</td>
+  <td>Foto</td>
+  <td>2</td>
+  <td onclick="agregarProducto(this);" onmouseover="this.style.cursor='pointer'">Agregar Servilletas</td>
+</tr>
+<tr>
+  <td>Album de fotos</td>
+  <td>Foto</td>
+  <td>11</td>
+  <td onclick="agregarProducto(this);" onmouseover="this.style.cursor='pointer'">Agregar Fotos</td>
+</tr>
+<tr>
+  <td>Pan de molde</td>
+  <td>Foto</td>
+  <td>3</td>
+  <td onclick="agregarProducto(this);" onmouseover="this.style.cursor='pointer'">Agregar Pan</td>
+</tr>
+</table>
+
+</body>
+</html>
